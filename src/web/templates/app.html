@@ -8,11 +8,23 @@
 
 <body>
 
+	<script src="{{ url_for('static', filename='js/app.js') }}" defer></script>
+
 	<center>
 
 		<h1>Railway Systems</h1>
-		<h2>You are authenticated.</h2>
 		<a id="logout" href="/logout">Log Out</a></p>
+
+		<p>Enter a date (format "YYYY-MM-DD") to retrieve the text logs:</p>
+		<div id="form">
+			<form>
+				<label for="command:">Date:</label>
+				<input type="text" id="command" name="command"/>
+				<button id="send-grep">Search</button>
+			</form>
+		</div>
+
+		<pre id="output-grep"></pre>
 
 	</center>
 

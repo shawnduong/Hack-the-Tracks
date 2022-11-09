@@ -30,3 +30,6 @@ from authentication import *
 
 # Website routes.
 from routes import *
+
+# API endpoints, used by HackerPass units.
+from api import *

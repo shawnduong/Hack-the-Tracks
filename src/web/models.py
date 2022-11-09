@@ -41,14 +41,12 @@ class User(UserMixin, db.Model):
 
 		if len(result) > 0:
 			userid = result[0][0]
-		print(userid)
 
 		db.session.commit()
 
 		# The above code was just to be vulnerable. We still need to return
 		# a User object.
 		if userid != None:
-			print("true")
 			return User.query.get(userid)
 
 		return False
