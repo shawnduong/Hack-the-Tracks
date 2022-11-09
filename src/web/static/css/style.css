@@ -1,3 +1,19 @@
 html {
 	background-color: grey;
 }
+
+#container {
+	width: 100%;
+}
+
+#grep {
+	vertical-align: top;
+	display: inline-block;
+	width: 40%;
+}
+
+#sql {
+	vertical-align: top;
+	display: inline-block;
+	width: 40%;
+}

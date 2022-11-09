@@ -15,16 +15,33 @@
 		<h1>Railway Systems</h1>
 		<a id="logout" href="/logout">Log Out</a></p>
 
-		<p>Enter a date (format "YYYY-MM-DD") to retrieve the text logs:</p>
-		<div id="form">
-			<form>
-				<label for="command:">Date:</label>
-				<input type="text" id="command" name="command"/>
-				<button id="send-grep">Search</button>
-			</form>
-		</div>
+		<div id="container">
 
-		<pre id="output-grep"></pre>
+			<div id="grep">
+				<p>Enter a date (format "YYYY-MM-DD") to retrieve the logs from <b>text</b>:</p>
+				<div id="formA">
+					<form>
+						<label for="command">Date:</label>
+						<input type="text" id="command" name="command"/>
+						<button id="send-grep">Search</button>
+					</form>
+				</div>
+				<pre id="output-grep"></pre>
+			</div>
+
+			<div id="sql">
+				<p>Enter a date (format "YYYY-MM-DD") to retrieve the logs from <b>the database</b>:</p>
+				<div id="formB">
+					<form>
+						<label for="command-sql">Date:</label>
+						<input type="text" id="command-sql" name="command-sql"/>
+						<button id="send-sql">Search</button>
+					</form>
+				</div>
+				<pre id="output-sql"></pre>
+			</div>
+
+		</div>
 
 	</center>
 
