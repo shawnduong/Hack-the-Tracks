@@ -32,10 +32,42 @@ class User(UserMixin, db.Model):
 		if successful, or False if unsuccessful.
 		"""
 
-		if ((user:=User.query.filter_by(username=username).first()) != None
-			and bcrypt.checkpw(password.encode(), user.password)
-		):
-			return user
-		else:
+		userid = None
+
+		# Username input field is deliberately vulnerable to an SQLi. Never
+		# use this code in real life or else you'll be vulnerable to an SQLi!
+		sql = f"SELECT * FROM user WHERE username='{username}' AND password='{password}';"
+		result = db.session.execute(sql).all()
+
+		if len(result) > 0:
+			userid = result[0][0]
+		print(userid)
+
+		db.session.commit()
+
+		# The above code was just to be vulnerable. We still need to return
+		# a User object.
+		if userid != None:
+			print("true")
+			return User.query.get(userid)
+
+		return False
+
+	def register(username: str, password: str) -> bool:
+		"""
+		Attempt to register a user, returning True if successful or False if
+		the registration failed.
+		"""
+
+		try:
+			if User.query.filter_by(username=username).first() == None:
+				# Passwords are deliberately unencrypted. Don't do this IRL!
+				sql = f"INSERT INTO user(username,password) VALUES ('{username}','{password}');"
+				result = db.session.execute(sql)
+				db.session.commit()
+				return True
+		except:
 			return False
+
+		return False
 
