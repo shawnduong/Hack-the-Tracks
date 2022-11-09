@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Railway Systems</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+	<center>
+
+		<h1>Railway Systems</h1>
+		<h2>Authentication required.</h2>
+
+		<form id="login-form" action="/login" method="POST">
+			<label for="username">Username</label>
+			<br>
+			<input type="text" id="username" name="username">
+			<br><br>
+			<label for="username">Password</label>
+			<br>
+			<input type="password" id="password" name="password">
+			<br><br>
+			<button id="login-submit">Log In</button>
+			{% if failed %}
+				<h5>Invalid login.</h5>
+			{% endif %}
+		</form>
+
+	</center>
+
+</body>
