@@ -37,7 +37,7 @@ class User(UserMixin, db.Model):
 		# Username input field is deliberately vulnerable to an SQLi. Never
 		# use this code in real life or else you'll be vulnerable to an SQLi!
 		sql = f"SELECT * FROM user WHERE username='{username}' AND password='{password}';"
-		result = db.session.execute(sql).all()
+		result = db.session.execute(sql).fetchall()
 
 		if len(result) > 0:
 			userid = result[0][0]

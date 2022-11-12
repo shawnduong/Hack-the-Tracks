@@ -29,7 +29,7 @@ def vuln_sql():
 	sql = f"SELECT * FROM logs WHERE date=\"{request.json['command']}\";"
 
 	try:
-		result = db.session.execute(sql).all()
+		result = db.session.execute(sql).fetchall()
 		output = {"result": "\n".join([str(r) for r in result])}
 	except Exception as err:
 		output = {"result": f"Query failed: {err}"}
