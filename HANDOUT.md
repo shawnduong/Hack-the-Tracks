@@ -115,7 +115,7 @@ If you run `ip a`, you can see your IP address on the network. Notice that it st
 nmap -sn 192.168.2.1/24
 ```
 
-Now that we know who's on the network (spoiler: the target is `192.168.2.1`, let's scan them to see what they're running.
+Now that we know who's on the network (spoiler: the target is `192.168.2.1`), let's scan them to see what they're running.
 
 ***Task: run the following command to scan the target.***
 
