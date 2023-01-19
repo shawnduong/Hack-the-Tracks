@@ -21,7 +21,6 @@ Tutorials:
 - https://www.hp.com/us-en/shop/tech-takes/how-to-boot-from-usb-drive-on-windows-10-pcs
 - https://www.lifewire.com/how-to-boot-from-a-usb-device-2626091
 - https://www.digitalcitizen.life/boot-your-windows-10-pc-usb-flash-drive/
-- For Mac users: https://iboysoft.com/mac-data-recovery/mac-boot-from-usb.html
 
 ## Network Hacking
 
